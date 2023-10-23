@@ -38,9 +38,13 @@ function App() {
     <div className="app">
       <Header />
       <div className="imgContainer">
-        <Gallery title={imgArr[0].title} imgURL={imgArr[0].image_url} desc={imgArr[0].description} />
-        <Gallery title={imgArr[1].title} imgURL={imgArr[1].image_url} desc={imgArr[1].description} />
-        <Gallery title={imgArr[2].title} imgURL={imgArr[2].image_url} desc={imgArr[2].description} />
+        {imgArr.map((e) => {
+          return (
+            <>
+              <Gallery title={e.title} imgURL={e.image_url} desc={e.description} />
+            </>
+          );
+        })}
       </div>
       <Footer />
     </div>
