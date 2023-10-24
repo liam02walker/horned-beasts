@@ -9,9 +9,11 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-
-  margin: 0;
-  padding: 0;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 10vh;
 
   background-color: rgb(80, 80, 80);
   color: rgb(255, 218, 218);
@@ -22,9 +24,26 @@ body {
   justify-content: space-between;
   align-items: center;
 
-  margin: 25px;
+  margin: 50px 25px;
 }
-.galleryImage {
+.imageContainer {
+  position: relative;
   width: 250px;
   height: 250px;
+}
+.galleryImage {
+  width: 100%;
+  height: 100%;
+}
+.likeButton {
+  position: absolute;
+  margin: 0;
+  padding: 0;
+  top: 85%;
+  left: 85%;
+
+  font-size: 32px;
+}
+.likeButton:hover {
+  cursor: pointer;
 }
