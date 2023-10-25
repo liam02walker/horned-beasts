@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-export default function Gallery(props) {
+export default function Gallery({ title, desc, imgURL, showBigImg }) {
   const [likes, setLikes] = useState(0);
 
   function likeSetter() {
@@ -8,15 +8,14 @@ export default function Gallery(props) {
   }
   return (
     <div className="galleryImages">
-      <h2 className="galleryTitle">{props.title}</h2>
-      <h3>FAVOURITES: {likes}</h3>
+      <h2 className="galleryTitle">{title}</h2>
       <div className="imageContainer">
-        <img src={props.imgURL} alt={props.desc} className="galleryImage" />
+        <img src={imgURL} alt={desc} className="galleryImage" onClick={showBigImg} />
         <span className="likeButton" onClick={likeSetter}>
-          ❤️
+          {likes}❤️
         </span>
       </div>
-      <p className="galleryDesc">{props.desc}</p>
+      <p className="galleryDesc">{desc}</p>
     </div>
   );
 }
